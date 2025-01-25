@@ -4,3 +4,6 @@ torch
 torch_geometric
 kaggle
 joblib
+seaborn
+scikit-learn
+imbalanced-learn
