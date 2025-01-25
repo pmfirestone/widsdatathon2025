@@ -65,6 +65,7 @@ class WiDSDataset(InMemoryDataset):
             connectome = from_networkx(connectome)
             connectome.edge_attr = connectome.weight.reshape((39800, 1))
             connectome.y = tuple(values_df.loc[participant_id])
+            connectome.participant_id = participant_id
             return connectome
 
         data_list = Parallel(n_jobs=8, verbose=10)(
