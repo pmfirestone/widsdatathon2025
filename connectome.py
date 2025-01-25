@@ -30,8 +30,8 @@ class WiDSDataset(InMemoryDataset):
 
     def download(self) -> None:
         kaggle.api.authenticate()
-        kaggle.api.competition_download_files("widsdatathon2025", '.')
-        zipfile.ZipFile('widsdatathon2025.zip').extractall()
+        kaggle.api.competition_download_files("widsdatathon2025", ".")
+        zipfile.ZipFile("widsdatathon2025.zip").extractall()
 
     def process(self):
         connectomes_df = pd.read_csv(
