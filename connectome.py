@@ -41,6 +41,16 @@ class WiDSDataset(InMemoryDataset):
         data_list = []
 
         def convert_data_to_graph(participant_id):
+            """Convert a connectome, represented as csv, to a torch-geometric graph.
+
+            Args:
+            participant_id: str --- the participant_id of the graph to convert.
+
+            Returns:
+            A torch-geometric graph representing an undirected
+            fully-connected weighted graph that has one feature: edge
+            weights and whose y values are a pair: (ADHD_Outcome, Sex_F).
+            """
             # FIXME: Is this two-step conversion necessary, or could we go straight to torch_geometric data?
             # Put dataframe contents into networkx graph.
             connectome = nx.Graph()
