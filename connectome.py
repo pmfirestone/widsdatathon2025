@@ -13,7 +13,7 @@ from torch_geometric.data import InMemoryDataset
 
 
 class WiDSDataset(InMemoryDataset):
-    def __init__(self, root, transform=None, pre_transform=None, pre_filter=None):
+    def __init__(self, root=".", transform=None, pre_transform=None, pre_filter=None):
         super().__init__(root, transform, pre_transform, pre_filter)
         self.load(self.processed_paths[0])
 
